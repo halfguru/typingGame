@@ -10,10 +10,9 @@ class Menu:
 		self.game = game
 		self.bg = pygame.image.load("sprites/bgGame.jpg")
 		self.ingamebg = pygame.image.load("sprites/ingamebg.jpg")
-		#self.surf_ind = pygame.Surface([game.WINDOWWIDTH, 80])
-		#self.surf_ind.set_alpha(128)
-		#self.surf_ind.fill((game.BLACK))
-		self.game.screen.blit(self.bg, (0,0))
+		self.display = True
+
+		self.game.SCREEN.blit(self.bg, (0,0))
 
 		self.MENUFONT = pygame.font.Font('coders_crux.ttf', 40)
 		self.TITLEFONT = pygame.font.Font('coders_crux.ttf', 90)
@@ -65,10 +64,6 @@ class Menu:
 					elif event.key == pygame.K_DOWN:
 						self.index = (self.index+1)%4
 						print self.index 
-					elif event.key == pygame.K_LEFT:
-						pass
-					elif event.key == pygame.K_RIGHT:
-						pass
 					elif event.key == pygame.K_SPACE or event.key == pygame.K_RETURN:
 
 						# quit
@@ -94,26 +89,34 @@ class Menu:
 
 	def draw(self):
 
-		self.game.screen.blit(self.game_name, (450, 200))
+		self.game.SCREEN.blit(self.game_name, (450, 200))
 
 		if self.mode == "menu":
-		  #  self.game.screen.blit(self.surf_ind, (0, self.index * 80 + 100))
+		  #  self.game.SCREEN.blit(self.surf_ind, (0, self.index * 80 + 100))
 			for ind in range(4):
-				self.game.screen.blit(self.menu_items[ind], (500, 304 + ind * 80))
+				self.game.SCREEN.blit(self.menu_items[ind], (500, 304 + ind * 80))
 
-				self.game.screen.blit(self.menu_items_selected[self.index], (500, 304 + self.index * 80))
+				self.game.SCREEN.blit(self.menu_items_selected[self.index], (500, 304 + self.index * 80))
 		elif self.mode == "map":
 			pass
 		elif self.mode == "options":
 			pass
 
 
-		self.game.DISPLAYSURF.blit(self.game.screen, (0, 0))
+		self.game.DISPLAYSURF.blit(self.game.SCREEN, (0, 0))
 		pygame.display.flip()
 
 	def pause(self):
-		#self.game.DISPLAYSURF.screen.fill(self.game.BLACK)
-		self.game.screen.blit(self.game_name, (450, 200))
+
+		self.game_name_lost = self.TITLEFONT.render("PAUSE", 1, (self.game.BRIGHTBLUE))
+		self.display = not self.display
+		if self.display == False:
+			self.game_name_lost = self.TITLEFONT.render("PAUSE", 1, (self.game.WHITE))
+
+		self.game.SCREEN.blit(self.game_name_lost, (self.game.WINDOWWIDTH/2 - 100, 300))
+		self.game.DISPLAYSURF.blit(self.game.SCREEN, (0, 0))
+		pygame.display.flip()
+		pygame.time.wait(250)
 
 
 
