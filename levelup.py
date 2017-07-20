@@ -25,7 +25,8 @@ class Level:
 			self.MENUFONT.render("Total: ", 1, (game.WHITE)),
 			self.MENUFONT.render("Press <ENTER> to continue: ", 1, (game.WHITE))
 			]
-
+	
+	
 
 	def run(self,state):
 
@@ -86,6 +87,8 @@ class Level:
 			self.MENUFONT.render("Press <ENTER> to continue: ", 1, (self.game.WHITE))
 			]
 
+		#if n > 0:
+		#	n=n-1
 		self.game_name = self.TITLEFONT.render("LEVEL " + str(Scoreboard.level) + " COMPLETE", 1, self.game.BLUE)
 		self.display = not self.display
 		if self.display == False:

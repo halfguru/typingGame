@@ -40,7 +40,7 @@ class Scoreboard():
         self.missed_string = "Missed: " + str(Scoreboard.error)
         self.missed_image = self.font.render(self.missed_string, True, self.text_color)
 
-        self.speedLevel_string = "speedLevel: " + str('%.1f' % Scoreboard.speedLevel)
+        self.speedLevel_string = "Speed: " + str('%.1f' % Scoreboard.speedLevel)
         self.speedLevel_image = self.font.render(self.speedLevel_string, True, self.text_color)
 
         self.level_string = "Level: " + str(Scoreboard.level)
