@@ -56,13 +56,13 @@ class Menu:
 						else:
 							self.mode = "menu"
 							self.index = 0
-							print index 
+							print (index) 
 					elif event.key == pygame.K_UP:
 						self.index = (self.index-1)%4
-						print self.index 
+						print (self.index)
 					elif event.key == pygame.K_DOWN:
 						self.index = (self.index+1)%4
-						print self.index 
+						print (self.index) 
 					elif event.key == pygame.K_SPACE or event.key == pygame.K_RETURN:
 
 						# quit
@@ -70,14 +70,14 @@ class Menu:
 							running = False
 						# play -> select map
 						elif self.mode == "menu" and self.index == 0: # PLAY NOW
-							print "play now"
+							print ("play now")
 							self.game.run()
 							running = False
 						# options
 						elif self.mode == "menu" and self.index == 1: # OPTIONS
 							pass
 						elif self.mode == "menu" and self.index == 2: # CREDITS
-							print "credits top kek"
+							print ("credits top kek")
 							#~ self.mode = "options"
 
 						#~ self.game.run()

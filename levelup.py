@@ -33,7 +33,7 @@ class Level:
 		global index
 
 		running = True
-		print str(Scoreboard.level) + " MENU LEVEL"
+		print (str(Scoreboard.level) + " MENU LEVEL")
 
 		sound = Sound()
 		if state == "levelup":
@@ -54,7 +54,7 @@ class Level:
 				if event.type == pygame.KEYDOWN:
 					
 					if event.key == pygame.K_SPACE or event.key == pygame.K_RETURN:
-						print "next level mate"
+						print ("next level mate")
 						running = False
 						break
 					if event.key == K_ESCAPE:

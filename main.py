@@ -149,7 +149,7 @@ class Game():
 				if event.type == KEYDOWN:
 
 					if pygame.key.name(event.key) == randomWord[letterAttempt].lower():
-						print randomWord[letterAttempt]
+						print (randomWord[letterAttempt])
 						self.character_counter += 1
 						highlightColor = self.YELLOW
 						letterAttempt = letterAttempt + 1
@@ -157,7 +157,7 @@ class Game():
 							self.word_counter += 1
 							newWord = True
 							Scoreboard.progress_percent += 0.05
-							print "\nnew word"
+							print ("\nnew word")
 							sound.playsound("word")
 
 					elif event.key == pygame.K_BACKSPACE:
@@ -170,7 +170,7 @@ class Game():
 					elif event.key == pygame.K_F1:
 						pause = True
 						menu.mode = "pause"
-						print menu.mode
+						print (menu.mode)
 						while pause:
 							for event in pygame.event.get(): # event handling loop
 								if event.type == KEYDOWN:
@@ -181,14 +181,14 @@ class Game():
 							pygame.display.update()
 
 					elif event.key == pygame.K_1:
-						print  scoreboard.wordLength
+						print  (scoreboard.wordLength)
 						scoreboard.wordLength += 1
 					elif event.key == pygame.K_2:
-						print  scoreboard.wordLength
+						print  (scoreboard.wordLength)
 						scoreboard.wordLength -= 1
 
 					elif pygame.key.name(event.key) != randomWord[letterAttempt].lower() and event.key != K_SPACE and event.key != K_RETURN:
-						print "error"
+						print ("error")
 						highlightColor = self.RED
 						Scoreboard.error = Scoreboard.error + 1 
 						sound.playsound("miss")
@@ -200,7 +200,7 @@ class Game():
 
 			#GAME OVER
 			if Scoreboard.error == 20:
-				print "game over"
+				print ("game over")
 				sound.playmusic("Stop")
 				level.run("gameover")
 				newWord = True
