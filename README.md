@@ -1,6 +1,6 @@
 ## Typing Game
 
-Typing game on python
+![Typing game on Python](https://media.giphy.com/media/9PaGDxxTKCTJLtN3wA/giphy.gif)
 
 ### Prerequisites
 
