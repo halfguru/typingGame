@@ -19,7 +19,7 @@ class Game():
         self.FPS = 60
         self.WINDOWWIDTH = 1280
         self.WINDOWHEIGHT = 720
-        self.read_wordlist("wordlist.txt")
+        self.read_wordlist("../utils/wordlist.txt")
 
         #                R    G    B
         self.WHITE        = (255, 255, 255)
@@ -39,8 +39,8 @@ class Game():
         self.FPSCLOCK = pygame.time.Clock()
         self.SCREEN = pygame.Surface([self.WINDOWWIDTH, self.WINDOWHEIGHT])
         self.DISPLAYSURF = pygame.display.set_mode((self.WINDOWWIDTH, self.WINDOWHEIGHT))
-        self.BASICFONT = pygame.font.Font('coders_crux.ttf', 40)
-        self.BASICFONT1 = pygame.font.Font('coders_crux.ttf', 32)
+        self.BASICFONT = pygame.font.Font('../utils/coders_crux.ttf', 40)
+        self.BASICFONT1 = pygame.font.Font('../utils/coders_crux.ttf', 32)
 
     def run(self):
 

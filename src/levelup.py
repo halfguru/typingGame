@@ -9,12 +9,12 @@ class Level:
 
     def __init__(self, game):
         self.game = game
-        self.bg = pygame.image.load("sprites/bgGame.jpg")
-        self.ingamebg = pygame.image.load("sprites/ingamebg.jpg")
+        self.bg = pygame.image.load("../img/bgGame.jpg")
+        self.ingamebg = pygame.image.load("../img/ingamebg.jpg")
         self.display = True
 
-        self.MENUFONT = pygame.font.Font('coders_crux.ttf', 40)
-        self.TITLEFONT = pygame.font.Font('coders_crux.ttf', 90)
+        self.MENUFONT = pygame.font.Font('../utils/coders_crux.ttf', 40)
+        self.TITLEFONT = pygame.font.Font('../utils/coders_crux.ttf', 90)
         self.menu_items_lost = [
             self.MENUFONT.render("Accuracy: ", 1, (game.WHITE)),
             self.MENUFONT.render("Bonus: ", 1, (game.WHITE)),

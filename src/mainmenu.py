@@ -1,22 +1,22 @@
 import pygame
 
 
-class Menu:
-    index = 0
-    mode = "menu"
+class Menu():
 
     def __init__(self, game):
 
+        self.mode = "menu"
+        self.index = 0
         self.game = game
-        self.bg = pygame.image.load("sprites/bgGame.jpg")
-        self.ingamebg = pygame.image.load("sprites/ingamebg.jpg")
+        self.bg = pygame.image.load("../img/bgGame.jpg")
+        self.ingamebg = pygame.image.load("../img/ingamebg.jpg")
         self.display = True
 
         self.game.SCREEN.blit(self.bg, (0, 0))
 
-        self.MENUFONT = pygame.font.Font('coders_crux.ttf', 40)
-        self.TITLEFONT = pygame.font.Font('coders_crux.ttf', 90)
-        self.SELECTEDFONT = pygame.font.Font('coders_crux.ttf', 50)
+        self.MENUFONT = pygame.font.Font('../utils/coders_crux.ttf', 40)
+        self.TITLEFONT = pygame.font.Font('../utils/coders_crux.ttf', 90)
+        self.SELECTEDFONT = pygame.font.Font('../utils/coders_crux.ttf', 50)
 
         self.game_name = self.TITLEFONT.render("TYPING MANIAC", 1, (game.BRIGHTBLUE))
 
@@ -32,9 +32,7 @@ class Menu:
             self.MENUFONT.render("QUIT", 1, (game.RED))]
 
     def run(self):
-        global index
         clock = pygame.time.Clock()
-        index = 0
         self.game.DISPLAYSURF.blit(self.bg, (0, 0))
 
         running = True
@@ -50,7 +48,7 @@ class Menu:
                         else:
                             self.mode = "menu"
                             self.index = 0
-                            print(index)
+                            print(self.index)
                     elif event.key == pygame.K_UP:
                         self.index = (self.index - 1) % 4
                         print(self.index)
